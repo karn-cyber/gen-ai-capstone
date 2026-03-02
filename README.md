@@ -20,6 +20,8 @@
 12. [Deployment](#deployment)
 
 ---
+## Hosted Link
+https://gen-ai-capstone-nakul.streamlit.app/
 
 ## Project Overview
 
