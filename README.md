@@ -255,3 +255,6 @@ The app is designed to deploy on:
 | **Render** | Add `streamlit run app.py --server.port $PORT --server.headless true` as start command |
 
 > Make sure `02.csv`, `rf_model_new.joblib`, and `minmaxscaler.joblib` are committed to the repo or uploaded to the hosting platform — the app requires them at runtime.
+
+
+Team members: Nakul | Puneet | Neelanshu | Sudeshna
