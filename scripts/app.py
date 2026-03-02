@@ -2,9 +2,13 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
+from pathlib import Path
 from sklearn.preprocessing import LabelEncoder, MinMaxScaler
 import plotly.express as px
 import plotly.graph_objects as go
+
+# Project root = parent of the "scripts" folder this file lives in
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 #  PAGE CONFIG
@@ -226,7 +230,7 @@ div.stButton > button:hover {
 def load_pipeline():
     """Rebuild the exact same preprocessing pipeline from the notebook."""
 
-    data = pd.read_csv("data/02.csv", low_memory=False)
+    data = pd.read_csv(BASE_DIR / "data" / "02.csv", low_memory=False)
 
     drop_cols = [
         "No", "UnitPrice", "PricePerTsubo", "Period", "Remarks",
@@ -279,7 +283,7 @@ def load_pipeline():
 
     feature_cols = [c for c in data.columns if c != "TradePrice"]
 
-    model = joblib.load("models/rf_model_new.joblib")
+    model = joblib.load(BASE_DIR / "models" / "rf_model_new.joblib")
 
     return {
         "model": model,
