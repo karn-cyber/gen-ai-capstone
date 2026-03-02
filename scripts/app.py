@@ -226,7 +226,7 @@ div.stButton > button:hover {
 def load_pipeline():
     """Rebuild the exact same preprocessing pipeline from the notebook."""
 
-    data = pd.read_csv("02.csv", low_memory=False)
+    data = pd.read_csv("data/02.csv", low_memory=False)
 
     drop_cols = [
         "No", "UnitPrice", "PricePerTsubo", "Period", "Remarks",
@@ -279,7 +279,7 @@ def load_pipeline():
 
     feature_cols = [c for c in data.columns if c != "TradePrice"]
 
-    model = joblib.load("rf_model_new.joblib")
+    model = joblib.load("models/rf_model_new.joblib")
 
     return {
         "model": model,
